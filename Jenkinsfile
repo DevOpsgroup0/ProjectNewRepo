@@ -1,7 +1,7 @@
 node{
        stage("SCM Checkout"){
             git 'https://github.com/DevOpsgroup0/ProjectNewRepo.git'
-        }
+        } // enlever ce Stage si vous optez pour une configuration pipeline SCM dans votre jenkins
         stage('Build') {
             
             sh 'python3 -m compileall api/linkextractor.py api/main.py'
