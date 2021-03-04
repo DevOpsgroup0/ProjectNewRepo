@@ -4,7 +4,7 @@
   $api_endpoint = $_ENV["API_ENDPOINT"] ?: "http://localhost:5000/api/";
   $url = "";
   if(isset($_GET["url"]) && $_GET["url"] != "") {
-    $url = $_GET["url"];
+    $url = htmlspecialchars($_GET["url"]);
     $json = @file_get_contents($api_endpoint . $url);
     if($json == false) {
       $err = "Something is wrong with the URL: " . $url;
